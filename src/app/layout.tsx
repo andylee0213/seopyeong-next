@@ -28,6 +28,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/images/favicon_seopyeong.ico" />
         <meta name="naver-site-verification" content="0e25248cf92d2c3acdb7b72f3523be4b5b6952c8" />
         <link rel="canonical" href="https://www.seopyeong.com/" />
+        <script
+          type="text/javascript"
+          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b36253d2fe67d0211c0055b24168feef"
+          referrerPolicy="no-referrer"
+        />
       </head>
       <body>
         <Navigation />
