@@ -25,6 +25,7 @@ body {
   font-family: 'Noto Sans KR', "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
   color: var(--main-blue);
   background: #fff;
+  overflow-x: hidden;
 }
 
 a {
@@ -384,6 +385,10 @@ footer {
   margin: 30px 0 60px;
 }
 
+.works-grid a {
+  display: block;
+}
+
 .work-card {
   width: 237px;
   height: 178px;
@@ -407,6 +412,8 @@ footer {
   text-align: center;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   line-height: 1.4;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 /* ────────────────────────────────────────
@@ -1116,7 +1123,17 @@ footer {
 ──────────────────────────────────────── */
 @media (max-width: 768px) {
   .grid-container {
-    width: 90%;
+    width: calc(100% - 48px);
+    max-width: 100%;
+  }
+
+  .gnb-container {
+    height: 80px;
+    padding: 0 28px;
+  }
+
+  .gnb-container .logo img {
+    width: 160px;
   }
 
   .content-map {
@@ -1171,6 +1188,7 @@ footer {
 
   .about-greet-container {
     flex-direction: column;
+    max-width: 100%;
   }
 
   .contact-wrap {
@@ -1211,11 +1229,168 @@ footer {
   }
 
   .work-card {
-    width: calc(50% - 2px);
+    width: 100%;
     height: 140px;
+  }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .works-grid a {
+    width: auto;
+    min-width: 0;
+  }
+
+  .work-card h3 {
+    max-width: 90%;
+    font-size: 18px;
+    line-height: 1.35;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    white-space: pre-line;
   }
 
   .about-intro-card {
     width: 100%;
+  }
+
+  .about-background {
+    height: auto;
+    min-height: 0;
+    padding: 56px 0 64px;
+    background-position: center top;
+    overflow: hidden;
+  }
+
+  .about-line-container {
+    padding-top: 0;
+  }
+
+  .about-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .about-wrapper {
+    margin-top: 34px;
+  }
+
+  .about-logo {
+    height: auto;
+    margin: 34px 24px 0;
+  }
+
+  .about-logo img {
+    float: none;
+    margin-left: auto;
+    width: 132px;
+    height: auto;
+  }
+
+  .about-greet-contens {
+    margin: 28px 24px 44px;
+    max-width: calc(100% - 48px);
+  }
+
+  .about-greet-title {
+    font-size: 22px;
+    line-height: 1.45;
+  }
+
+  .about-greet-detail {
+    margin-top: 26px;
+    font-size: 16px;
+    line-height: 1.85;
+    text-indent: 0;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .about-greet-detail p {
+    margin-bottom: 14px;
+  }
+
+  .about-greeter {
+    float: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 8px 12px;
+    margin: 30px 0 0;
+  }
+
+  .about-greet-positon {
+    margin-right: 0;
+    font-size: 13px;
+  }
+
+  .about-greet-name {
+    margin-right: 0;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+
+  .about_introduce_title_hr {
+    margin-top: 56px;
+  }
+
+  .about-introduce-wrapper {
+    margin-top: 36px;
+    margin-bottom: 64px;
+  }
+
+  .about-introduce-container {
+    height: 280px;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .about-introduce-title {
+    width: 100%;
+    font-size: 30px;
+    line-height: 1.45;
+    word-break: keep-all;
+    overflow-wrap: normal;
+  }
+
+  .about-introduce-title-one-line,
+  .about-introduce-title-two-line {
+    padding-top: 0;
+  }
+
+  .about-introduce-subtitle {
+    width: 100%;
+    padding-top: 28px;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .about-introduce-subtitle-one-line,
+  .about-introduce-subtitle-two-line {
+    padding-top: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-card {
+    height: 170px;
+  }
+
+  .work-card h3 {
+    font-size: 21px;
   }
 }
